@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <Import Project="..\..\..\Xamarin.Forms\.nuspec\Xamarin.Forms.DefaultItems.props" />
+  <Import Project="..\..\..\Xamarin.Forms\.nuspec\Xamarin.Forms.DefaultItems.targets" />
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\..\Xamarin.Forms\Xamarin.Forms.Build.Tasks\bin\Debug\netstandard2.0\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\..\Xamarin.Forms\Xamarin.Forms.Build.Tasks\bin\Debug\netstandard2.0\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\..\Xamarin.Forms\Xamarin.Forms.Build.Tasks\bin\Debug\netstandard2.0\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Build.Tasks">
+      <HintPath>..\..\Xamarin.Forms\Xamarin.Forms.Build.Tasks\bin\Debug\netstandard2.0\Xamarin.Forms.Build.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.CustomAttributes">
+      <HintPath>..\..\Xamarin.Forms\Xamarin.Forms.CustomAttributes\bin\Debug\netstandard2.0\Xamarin.Forms.CustomAttributes.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <Import Project="..\..\Xamarin.Forms\.nuspec\Xamarin.Forms.targets" Condition="'$(BuildingInsideVisualStudio)' == 'true'" />
+  <Import Project="..\..\Xamarin.Forms\.nuspec\Xamarin.Forms.targets" Condition="'$(BuildingInsideVisualStudio)' != 'true'" />
+
+
+</Project>
