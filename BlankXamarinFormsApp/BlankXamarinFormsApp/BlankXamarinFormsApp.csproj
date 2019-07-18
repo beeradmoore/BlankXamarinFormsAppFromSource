@@ -4,6 +4,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
   </PropertyGroup>
+  
+  <Import Project="..\..\..\Xamarin.Forms\.nuspec\Xamarin.Forms.DefaultItems.props" />
+  <Import Project="..\..\..\Xamarin.Forms\.nuspec\Xamarin.Forms.DefaultItems.targets" />
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebugType>pdbonly</DebugType>
@@ -23,13 +26,12 @@
     <Reference Include="Xamarin.Forms.Build.Tasks">
       <HintPath>..\..\Xamarin.Forms\Xamarin.Forms.Build.Tasks\bin\Debug\netstandard2.0\Xamarin.Forms.Build.Tasks.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.Forms.CustomAttributes">
+      <HintPath>..\..\Xamarin.Forms\Xamarin.Forms.CustomAttributes\bin\Debug\netstandard2.0\Xamarin.Forms.CustomAttributes.dll</HintPath>
+    </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <None Update="App.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </None>
-    <None Update="MainPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </None>
-  </ItemGroup>
+
+  <Import Project="..\..\Xamarin.Forms\.nuspec\Xamarin.Forms.targets" Condition="'$(BuildingInsideVisualStudio)' == 'true'" />
+  <Import Project="..\..\Xamarin.Forms\.nuspec\Xamarin.Forms.targets" Condition="'$(BuildingInsideVisualStudio)' != 'true'" />
+
 </Project>
