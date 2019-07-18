@@ -5,8 +5,8 @@
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
   </PropertyGroup>
 
-  <Import Project="..\..\..\Xamarin.Forms\.nuspec\Xamarin.Forms.DefaultItems.props" />
-  <Import Project="..\..\..\Xamarin.Forms\.nuspec\Xamarin.Forms.DefaultItems.targets" />
+  <Import Project="..\..\Xamarin.Forms\.nuspec\Xamarin.Forms.DefaultItems.props" />
+  <Import Project="..\..\Xamarin.Forms\.nuspec\Xamarin.Forms.DefaultItems.targets" />
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebugType>pdbonly</DebugType>
